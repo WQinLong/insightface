@@ -9,7 +9,7 @@ The code of InsightFace is released under the MIT License.
 
 ## Recent Update
 
-**`2018.07.17`**: [Model-Zoo](https://github.com/deepinsight/insightface/wiki/Model-Zoo)
+**`2018.07.17`**: [Model-Zoo](https://github.com/deepinsight/insightface/wiki/Model-Zoo), [Dataset-Zoo](https://github.com/deepinsight/insightface/wiki/Dataset-Zoo)
 
 **`2018.06.14`**: There's a large scale Asian training dataset provided by Glint, see this [discussion](https://github.com/deepinsight/insightface/issues/256) for detail.
 
@@ -129,7 +129,7 @@ CUDA_VISIBLE_DEVICES='0,1,2,3' python -u train_softmax.py --network m1 --loss-ty
 (4). Fine-turn the above Softmax model with Triplet loss.
 
 ```Shell
-CUDA_VISIBLE_DEVICES='0,1,2,3' python -u train_softmax.py --network m1 --loss-type 12 --lr 0.005 --mom 0.0 --per-batch-size 150 --data-dir ../datasets/faces_ms1m_112x112 --pretrained ../model-m1-softmax,50 --prefix ../model-m1-triplet
+CUDA_VISIBLE_DEVICES='0,1,2,3' python -u train_triplet.py --network m1 --lr 0.005 --mom 0.0 --per-batch-size 150 --data-dir ../datasets/faces_ms1m_112x112 --pretrained ../model-m1-softmax,50 --prefix ../model-m1-triplet
 ```
 
 (5). Train LDPN107E network with Softmax loss on VGGFace2 dataset.
