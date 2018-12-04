@@ -500,10 +500,10 @@ def resnet(units, num_stages, filter_list, num_classes, bottle_neck, **kwargs):
     workspace : int
         Workspace used in convolution operator
     """
-    version_se = kwargs.get('version_se', 1)
+    version_se = kwargs.get('version_se', 0)
     version_input = kwargs.get('version_input', 1)
     assert version_input>=0
-    version_output = kwargs.get('version_output', 'E')
+    version_output = kwargs.get('version_output', 'GAP')
     fc_type = version_output
     version_unit = kwargs.get('version_unit', 3)
     act_type = kwargs.get('version_act', 'prelu')
